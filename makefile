@@ -1,5 +1,4 @@
 default:
-	g++ -Wall a2-3.cpp -o a2-3.out 
-
+	g++ main.cpp HashTable.cpp -o main.out
 clean:
 	rm *.out
