@@ -152,4 +152,13 @@ public:
         }
         std::cout << std::endl;
     }
+
+    // Clear the hash table (reset to initial state)
+    void clear() {
+        table.clear();
+        table.resize(table_size, -1);  // Reset the table with empty slots
+        is_occupied.clear();
+        is_occupied.resize(table_size, false);  // Reset the occupation tracking
+        current_size = 0;
+    }
 };
