@@ -1,25 +1,35 @@
-#include "HashTable.h"
+#include "HashTable.cpp"
+#include <iostream>
 
 int main() {
     int initialSize = 7; 
     HashTable ht(initialSize);
 
-    // Example test case
+    // Example test cases
     ht.insert(1);
-    ht.print_table();
+    ht.printTable();
+    
     ht.insert(6);
-    ht.print_table();
+    ht.printTable();
+    
     ht.insert(15);
-    ht.print_table(); 
+    ht.printTable();
+    
     ht.insert(25);
-    ht.print_table();
+    ht.printTable();
+    
     ht.remove(15);
-    ht.print_table();
+    ht.printTable();
+    
     ht.insert(29);  
-    ht.print_table(); 
+    ht.printTable(); 
 
-    int find = ht.search(22);
-    std::cout << "Found at: " << find << std::endl;
+    int find = ht.search(25);
+    if (find != -1) {
+        std::cout << "Element found at index: " << find << std::endl;
+    } else {
+        std::cout << "Element not found" << std::endl;
+    }
 
     return 0;
 }
