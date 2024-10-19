@@ -2,7 +2,7 @@
 
 int main() {
     int initialSize = 7; 
-    HashTable ht(initialSize);
+    HashTable ht(initialSize);  // Initialize once
 
     // Example test case
     ht.insert(1);
@@ -19,8 +19,7 @@ int main() {
     ht.printTable(); 
 
     int find = ht.search(22);
-    std::cout << "Found at:" << find << std::endl;
+    std::cout << "Found at: " << find << std::endl;
 
     return 0;
 }
-
