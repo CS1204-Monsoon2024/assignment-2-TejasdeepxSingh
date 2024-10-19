@@ -4,11 +4,11 @@
 
 class HashTable {
 private:
-    std::vector<int> table;    // Stores the hash table
-    std::vector<bool> is_occupied;  // Tracks if a cell is occupied or has been deleted
-    int current_size;          // Number of elements currently in the table
-    int table_size;            // Current size of the hash table
-    const double load_factor_threshold = 0.8;
+    std::vector<int> table;           // Stores the hash table
+    std::vector<bool> is_occupied;    // Tracks if a cell is occupied or has been deleted
+    int current_size;                 // Number of elements currently in the table
+    int table_size;                   // Current size of the hash table
+    const double load_factor_threshold = 0.8;  // Load factor threshold
 
     // Helper function to check if a number is prime
     bool is_prime(int n) {
@@ -44,15 +44,15 @@ private:
         std::vector<bool> old_is_occupied = is_occupied;
 
         table.clear();
-        table.resize(table_size, -1);
+        table.resize(table_size, -1);       // Reset the table to new size
         is_occupied.clear();
-        is_occupied.resize(table_size, false);
+        is_occupied.resize(table_size, false);  // Reset occupied tracker to new size
         current_size = 0;
 
         // Rehash all the elements into the new table
         for (int i = 0; i < old_size; ++i) {
             if (old_is_occupied[i]) {
-                insert(old_table[i]);
+                insert(old_table[i]);  // Reinsert elements into the resized table
             }
         }
     }
